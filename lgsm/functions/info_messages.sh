@@ -1356,6 +1356,16 @@ fn_info_message_warfork(){
 	} | column -s $'\t' -t
 }
 
+fn_info_message_kag(){
+	echo -e "netstat -atunp | grep KAGdedi"
+	echo -e ""
+	{
+		echo -e "${lightblue}DESCRIPTION\tDIRECTION\tPORT\tPROTOCOL${default}"
+		echo -e "> Game\tINBOUND\t${port}\tudp"
+	} | column -s $'\t' -t
+}
+
+
 fn_info_message_select_engine(){
 	# Display details depending on game or engine.
 	if [ "${shortname}" == "ark" ]; then
@@ -1394,6 +1404,8 @@ fn_info_message_select_engine(){
 		fn_info_message_justcause2
 	elif [ "${shortname}" == "jc3" ]; then
 		fn_info_message_justcause3
+	elif [ "${shortname}" == "kag" ]; then
+		fn_info_message_kag
 	elif [ "${shortname}" == "kf2" ]; then
 		fn_info_message_kf2
 	elif [ "${shortname}" == "mcb" ]; then
