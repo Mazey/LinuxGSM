@@ -65,6 +65,8 @@ fn_install_server_files(){
 		remote_fileurl="https://static.soldat.pl/downloads/soldatserver2.8.1_1.7.1.zip"; local_filedir="${tmpdir}"; local_filename="soldatserver2.8.1_1.7.1.zip"; chmodx="nochmodx" run="norun"; force="noforce"; md5="994409c28520425965dec5c71ccb55e1"
 	elif [ "${shortname}" == "zmr" ]; then
 		remote_fileurl="http://linuxgsm.download/ZombieMasterReborn/zombie_master_reborn_b5_2.tar.bz2"; local_filedir="${tmpdir}"; local_filename="zombie_master_reborn_b5_2.tar.bz2"; chmodx="nochmodx" run="norun"; force="noforce"; md5="d52ef2db376f5d21e3a4ceca85ec8761"
+	elif [ "${shortname}" == "kag" ]; then
+		remote_fileurl="http://dl.kag2d.com/kag-linux32-dedicated-release.tar.gz"; local_filedir="${tmpdir}"; local_filename="kag-linux32-dedicated-release.tar.gz"; chmodx="nochmodx" run="norun"; force="noforce"; md5="088db6542daf0b96cbfc11703919cbbb"
 	fi
 	fn_fetch_file "${remote_fileurl}" "${local_filedir}" "${local_filename}" "${chmodx}" "${run}" "${forcedl}" "${md5}"
 	fn_dl_extract "${local_filedir}" "${local_filename}" "${serverfiles}"
@@ -164,7 +166,7 @@ elif [ "${shortname}" == "mta" ]; then
 elif [ "${shortname}" == "fctr" ]; then
 	update_factorio.sh
 	install_factorio_save.sh
-elif [ -z "${appid}" ]||[ "${shortname}" == "ahl" ]||[ "${shortname}" == "bd" ]||[ "${shortname}" == "bb" ]||[ "${shortname}" == "ges" ]||[ "${shortname}" == "ns" ]||[ "${shortname}" == "sfc" ]||[ "${shortname}" == "sol" ]||[ "${shortname}" == "ts" ]||[ "${shortname}" == "vs" ]||[ "${shortname}" == "zmr" ]; then
+elif [ -z "${appid}" ]||[ "${shortname}" == "ahl" ]||[ "${shortname}" == "bd" ]||[ "${shortname}" == "bb" ]||[ "${shortname}" == "ges" ]||[ "${shortname}" == "ns" ]||[ "${shortname}" == "sfc" ]||[ "${shortname}" == "sol" ]||[ "${shortname}" == "ts" ]||[ "${shortname}" == "vs" ]||[ "${shortname}" == "zmr" ]||[ "${shortname}" == "kag" ]; then
 	if [ "${shortname}" == "ut" ]; then
 		install_eula.sh
 	fi
